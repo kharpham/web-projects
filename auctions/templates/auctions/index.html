@@ -1,0 +1,47 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    {% if option == 'active' %}
+    <h2>Active Listings</h2>
+    {% elif option == 'all' %}
+    <h2>All Listings</h2>
+    {% elif option == 'category'%}
+    <h2>Active listing for <strong>({{category}})</strong></h2>
+    {% else %}
+    <h2>Closed Listings</h2>
+    {% endif %}
+    <hr>
+    <ul>
+    {% for listing in listings %}
+        <div class="row" class="index-view">
+            <div class="col-5"><img src={{listing.image_url}} alt={{listing.title}}></div>
+            <div class="col-7">
+                <strong>{{listing}}</strong>
+                <br>
+                {% if listing.active %}<strong style="color: blue;">ACTIVE</strong> {% else %}<strong style="color: red;">INACTIVE</strong> {% endif %}
+                <br>
+                {{listing.description}}
+                <br>
+                {% if listing.active %}
+                    Current price: <strong>{{listing.current_bid}}$</strong>
+                    <br>
+                {% else %}
+                    Winning bid: <strong>{{listing.current_bid}} ({{listing.winner}})</strong>
+                    <br>
+                {% endif%}
+                Category: <strong>{{listing.category}}</strong>
+                <br>
+                <ul class="nav">
+                    <div class="nav-item">
+                        <a class="nav-link" href="{% url 'view_listing' listing.id %}"><strong>View listing</strong></a>
+                    </div>
+                </ul>
+
+            </div>
+        </div>
+        <hr>
+    {% empty %}
+        No active list
+    {% endfor%}
+    </ul>
+{% endblock %}

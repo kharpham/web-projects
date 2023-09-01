@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash&family=Poppins:wght@500&display=swap');
+* {
+    font-family: 'poppins',sans-serif;
+}
+body {
+    font-size: 18px;
+}
+img {
+    max-width: 250px;
+    max-height: 300px;
+    margin-left: 20px;
+}
+.content {
+    padding-top: 30px;
+}
+
+.action_input {
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* a {
+    margin-top: 30px;
+    margin-left: 10px;
+} */
+
+div button {
+    margin-top: 30px;
+    margin-left: 20px;
+}
+#comments {
+    padding: 30px;
+    border: 1px gray solid;
+}
+.col-5 {
+    display: flex;
+    align-items: center;
+}
+.index-view {
+    width: 100%;
+    height: 400px;
+}
+/* .list-group {
+    width: 40%;
+} */
+.list_anchor {
+    background: blue;
+}
+
+.cotainer .form-control {
+    width: 300px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(146, 183, 252);
+    padding: 40px;
+    width: 35%;
+    border-radius: 40px;
+}
+
+.alternate {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.container input {
+    border-radius: 20px;
+}
+.container h3 {
+    text-align: center;
+    color: white;
+}
+#login {
+    transform: translateX(115%);
+    border-radius: 10px;
+}
+#register {
+    transform: translateX(80%);
+    border-radius: 10px;
+}
+#navbar a {
+    color: white;
+}
+.navbar_container {
+    background-color: rgb(75, 129, 244);
+    margin:0;
+    padding: 0px;
+    width: 100%;
+}
+h1 {
+    color: rgb(251, 255, 0);
+    padding: 10px;
+    margin-left: 10px;
+}
+
+#navbar {
+    margin: 0px;
+}
+.navbar_container div {
+    padding: 10px;
+    margin-left: 10px;
+}
+h2 {
+    padding: 10px;
+    margin-left: 10px;
+}
+#categories {
+    width: 50%;
+    padding: 20px;
+}
+#create {
+    padding: 10px;
+}

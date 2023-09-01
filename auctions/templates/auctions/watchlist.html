@@ -1,0 +1,37 @@
+{% extends 'auctions/layout.html' %}
+
+{% block body %}
+    <h2>Watchlist: {{user.username}} </h2>
+
+    {% for listing in watchlist %}
+    <div class="row" class="index-view">
+        <div class="col-5"><img src={{listing.image_url}} alt={{listing.title}}></div>
+        <div class="col-7">
+            <strong>{{listing}}</strong>
+            <br>
+            {% if listing.active %}<strong style="color: blue;">ACTIVE</strong> {% else %}<strong style="color: red;">INACTIVE</strong> {% endif %}
+            <br>
+            {{listing.description}}
+            <br>
+            {% if listing.active %}
+                Current price: <strong>{{listing.current_bid}}$</strong>
+            {% else %}
+                Winning bid: <strong>{{listing.current_bid}}$ ({{listing.winner}})</strong>
+            {% endif %}
+            <br>
+            Category: <strong>{{listing.category}}</strong>
+            <br>
+            <ul class="nav">
+                <div class="nav-item">
+                    <a class="nav-link" href="{% url 'view_listing' listing.id %}"><strong>View listing</strong></a>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    {% empty %}
+    No available watchlist
+    <hr>
+    {% endfor %}
+{% endblock body %}
+

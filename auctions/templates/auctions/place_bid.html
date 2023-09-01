@@ -1,0 +1,32 @@
+{% extends 'auctions/layout.html' %}
+
+{% block body %}
+<h2>Place Bid</h2>
+    <hr>
+    <div class="row">
+        <div class="col-6" ><img src="{{listing.image_url}}" alt="{{listing.title}}" style="max-width: 400px; max-height: 500px"></div>
+        <div class="col-6" class="content">
+            <h3>{{listing}}</h3>
+            <strong>{{message}}</strong>
+            <br>
+            <strong>Current bid: {{listing.current_bid}}$</strong>
+            <br>
+            Bids have been placed:  <strong>{{bids_count}}</strong>
+            <br>
+            {% if bids_count == 0 %}
+            Required: Your bid must be as least <strong>as large as</strong> the Starting Bid
+            {% else %}
+            Required: Your bid must be <strong>greater than</strong> the current bid
+            {% endif %}
+            <br>
+            <form action="{% url 'place_bid' listing.id%}" method="POST">
+                {% csrf_token %}
+                {{form}}
+                <div class='form-group'>
+                    <input type="submit" class="btn btn-primary" value="Place bid">
+                </div>
+            </form>
+
+        </div>
+    </div>
+{% endblock body %}
