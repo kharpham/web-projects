@@ -1,0 +1,200 @@
+
+h2 {
+    padding: 0px;
+    margin: 0px;    
+}
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'poppins';
+}
+.email {
+    display: flex;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.unread {
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(179, 179, 190);
+    font-weight: bold;
+}
+
+.read {
+    background-color: rgb(199, 199, 199);
+    border: 3px solid rgb(232, 232, 232);
+}
+.email-timestamp {
+    position: absolute;
+    right: 5%;
+    transform: translateX(-50%);
+}
+.email-subject {
+    width: 150px;
+    position: absolute;
+    left: 20%;
+    transform: translateX(50%);
+}
+.unread:hover {
+    border: outset;
+    border: 3px rgb(237, 237, 237) solid;
+}
+.read:hover {
+    border: outset;
+    border: 3px  rgb(160, 149, 149) solid;
+}
+.email:active {
+    background-color: rgb(207, 207, 207);
+}
+
+#account {
+    padding: 30px;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 14px;
+    width: 400px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+
+}
+.btn.btn-primary {
+    border-radius: 10px;
+    width: 100%;
+    background-color: #450FD4;
+    border: none;
+}
+.form-group input {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1.2em;
+    
+}
+ion-icon {
+    position: relative;
+    top: 1.8em;
+    left: -1.5em;
+    color: rgb(17, 42, 234);
+    margin-right: 5px;
+}
+.switch {
+    margin-top: 15px;
+    color: white;
+}
+#account h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+section > h2 {
+    /* margin: 10px; */
+    padding: 10px;
+    color: rgb(0, 0, 0);
+}
+#account a {
+    color: #1211F6;
+}
+#credential {
+    /* background: url('{% static "mail/static/email2.jpg" %}') no-repeat; */
+    background: url('/static/mail/email2.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    height: 100vh;
+}
+#emails-view {
+    width: 100%;
+}
+#email-view, #compose-view {
+    background: linear-gradient(90deg, rgb(5, 1, 90) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    height: 100vh;  
+    padding: 15px;
+    color: white;
+    font-size: 0.9em;
+}
+#emails-view {
+    background: linear-gradient(90deg, rgb(5, 1, 90) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    min-height: 100vh;
+    color: black;
+    padding: 15px;
+}
+#emails-view h3 {
+    color: white;
+}
+#email-view textarea, #compose-view textarea {
+    height: 250px;
+    width: 100%;
+}
+.btn.btn-primary{
+    margin-top: 20px;
+}
+#message {
+    
+    color: white;
+    margin-left: 25px;
+}
+#logged-in > h3 {
+    color: black;
+}
+#credential h2 {
+    color: white;
+}
+.button_option {
+    position: relative;
+    top: -140px;
+    left: 30px;
+}
+.button_option button {
+    margin-top: -20px;
+    margin-right: 20px;
+    color: white;
+    border-radius: 5px;
+    width: 150px;
+    border: none;
+}
+.archive {
+    background-color: blue;
+}
+.unarchive {
+    background-color: red;
+}
+.reply {
+    background-color: rgb(0, 255, 0);
+}
+.archive:hover {
+    background-color: rgb(0, 0, 128);
+}
+.unarchive:hover {
+    background-color: rgb(128, 0, 0);
+}
+.reply:hover {
+    background-color: green;
+}
+
+#compose-view h3 {
+    color: white;
+}
+#cs50-mail {
+    float: right;
+    position: relative;
+    top: -30px;
+    right: 30px;
+    color: rgb(0, 0, 255);
+}
+#navigator {
+    padding: 10px;
+    margin-top: 5px;
+}
+#navigator button, #navigator a {
+    margin-top: 15px;
+}

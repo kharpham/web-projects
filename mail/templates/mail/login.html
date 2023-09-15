@@ -1,0 +1,33 @@
+{% extends "mail/layout.html" %}
+
+{% block body %}
+    <section id="credential">
+        <h2>CS50 EMAIL</h2>
+        
+        <div id="account">
+            <div>
+                <h2>Login</h2>
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    {% if message %}
+                        <div id="message">{{ message }}</div>
+                    {% endif %}
+                    <div class="form-group">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input autofocus type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Login">
+                    <div class="switch">
+                        Don't have an account? <a href="{% url 'register' %}">Register here.</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
