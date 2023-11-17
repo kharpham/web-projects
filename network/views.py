@@ -17,7 +17,7 @@ def index(request):
     posts = Post.objects.all().order_by('-timestamp')
 
     # Create Paginator
-    pagination = Paginator(posts, 5)
+    pagination = Paginator(posts, 10)
     page = request.GET.get('page')
     posts_page = pagination.get_page(page)
 
@@ -30,7 +30,7 @@ def index(request):
             new_posts = Post.objects.all().order_by('-timestamp')
 
             # Create Paginator
-            new_pagination = Paginator(new_posts, 5)
+            new_pagination = Paginator(new_posts, 10)
             page = request.GET.get('page')
             posts_page = new_pagination.get_page(page)
             return render(request, "network/index.html", {
@@ -121,7 +121,7 @@ def profile(request, username):
             profile.followers.add(request.user)
             profile.save()
     posts = Post.objects.filter(creator=profile).order_by("-timestamp")
-    p = Paginator(posts, 5)
+    p = Paginator(posts, 10)
     page = request.GET.get('page')
     posts_page = p.get_page(page)
     return render(request, 'network/profile.html', {
@@ -138,7 +138,7 @@ def following(request):
     posts = Post.objects.filter(creator__in=followings).order_by('-timestamp')
 
     # Set up Pagination
-    pagination = Paginator(posts, 5)
+    pagination = Paginator(posts, 10)
     page = request.GET.get('page')
     posts_page = pagination.get_page(page)
 
