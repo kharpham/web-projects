@@ -1,0 +1,183 @@
+body {
+    background-color: #eeeeee;
+    font-family: 'poppins', sans-serif;
+}
+
+button, input {
+    height: 32px;
+}
+.username {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.block {
+    border: #316FF6c4 3px outset;
+    height: 180px;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.new_block {
+    border: #316ff6c4 3px outset;
+    height: 180px;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 10px;
+}
+
+/* .modify-textarea {
+    border: 2px solid transparent;
+    background-color: #e8e8e8;
+    transition: all 0.2s;
+} */
+textarea {
+    overflow-y: auto;
+    height: 80px;
+    width: 100%;
+    text-indent: 0px;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background-color: #e8e8e8;
+    transition: all 0.2s;
+}
+
+.modify-textarea:hover {
+    border: 2px solid #aaaaaa;
+    background-color: #e9e9e9;
+    cursor: pointer;
+}
+textarea:focus {
+    border: 2px solid #aaaaaa;
+    background-color: #e9e9e9;
+    outline: none;
+    cursor:text;
+}
+
+
+/* .block div input {
+    overflow-y: auto;
+    height: 80px;
+} */
+.follow {
+    background-color: rgb(39, 194, 39);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+.unfollow {
+    background-color: rgb(170, 7, 7);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.new_block input {
+    float: right;
+    transform: translateY(10px);
+    border: none;
+    outline: none;
+    background: rgb(59, 59, 255);
+    color: white;
+    border-radius: 5px;
+    width: 110px;
+    transition: all 0.2s;
+}
+.new_block input:hover, .new_block input:active {
+    background: rgb(24, 24, 253);
+}
+.edit {
+    float: right;
+    transform: translateY(-15px);
+    border: none;
+    outline: none;
+    background: rgb(59, 59, 255);
+    color: white;
+    border-radius: 5px;
+    width: 50px;
+    transition: all 0.2s
+}
+.edit:hover, .edit:active {
+    background: rgb(24, 24, 253);
+}
+.save {
+    float: right;
+    transform: translateY(-15px);
+    border: none;
+    outline: none;
+    background: rgb(255, 59, 59);
+    color: white;
+    border-radius: 5px;
+    width: 50px;
+    transition: all 0.2s
+}
+
+.save:hover, .save:active {
+    background: rgb(220, 2, 2);
+}
+
+.unlike-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: grey;
+}
+.like_btn:hover, .unlike_btn:hover {
+    cursor: pointer;
+}
+
+.like-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: red;
+    animation-name: grow;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+}
+
+.like-btn2 {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: red;
+}
+nav a {
+    color: white;
+}
+a {
+    color: black
+}
+nav a:hover, nav a:active {
+    color: rgb(243, 243, 243); 
+}
+
+a:hover, a:active {
+    color: rgb(47, 47, 244);
+}
+@keyframes grow {
+    0% {
+        transform: scale(1);
+        color: grey;
+    }
+
+    75% {
+        transform: scale(1.2);
+        color: red;
+    }
+
+    100% {
+        transform: scale(1);
+        color: red;
+    }
+}
+
+.body {
+    padding: 10px;
+}
+.paginator {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

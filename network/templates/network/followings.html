@@ -1,0 +1,57 @@
+{% extends 'network/layout.html' %}
+{% block title%} CS50 Community: Following {% endblock %}
+{% block body %}
+    <span id="username" style="display: none;">{{request.user.username}}</span>
+    <h3>Followings</h3>
+    {% if posts_page %}
+        {% for post in posts_page %}
+            <div class="block" id="{{post.id}}">
+                <a class="username" href="{% url 'profile' post.creator %}">{{post.creator}}</a> <br>
+                <textarea disabled>{{post.content}}</textarea>
+                {{post.timestamp}} <br>
+                {% if request.user in post.likes.all %}
+                    <button style="outline: none;" name="like" class="like-btn2"><i class="fa-solid fa-heart"></i></button>
+                {% else %}
+                    <button style="outline: none;" name="unlike"class="unlike-btn"><i class="fa-solid fa-heart"></i></button>
+                {% endif %}
+                <span class="like-number"></span>
+                {% if post.creator == request.user%}
+                <button type="button" class="edit">Edit</button>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <br><br>
+        {{posts_pages}}
+    {% else %}
+    <h3>You have no followings at the present</h3>
+    {% endif %}
+    <div class="paginator">
+        <nav aria-label="...">
+            <ul class="pagination">
+                {% if posts_page.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="following">&laquo; First Page</a>
+                    </li>
+                    {% if posts_page.previous_page_number != 1 %}
+                    <li class="page-item">
+                        <a href="following?page={{posts_page.previous_page_number}}" class="page-link">{{posts_page.previous_page_number}}</a>
+                    </li>
+                    {% endif %}
+                {% endif %}
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="following?page={{posts_page.number}}">{{posts_page.number}}</a>
+                    </li>
+                {% if posts_page.has_next %}
+                    {% if posts_page.next_page_number != posts_page.paginator.num_pages %}
+                        <li class="page-item">
+                            <a href="following?page={{posts_page.next_page_number}}" class="page-link">{{posts_page.next_page_number}}</a>
+                        </li>
+                    {% endif %}
+                    <li class="page-item">
+                        <a class="page-link" href="following?page={{posts_page.paginator.num_pages}}">Last Page &raquo;</a>
+                    </li>                    
+                {% endif %}
+            </ul>
+          </nav>
+    </div>
+{% endblock%}
